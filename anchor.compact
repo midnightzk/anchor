@@ -1,0 +1,17 @@
+pragma language_version >= 0.20;
+
+import CompactStandardLibrary;
+
+// Phase 1 (Atom-1A): anchor now accepts fact_hash: Bytes<32>
+// Stores the latest fact hash on-chain and increments an overflow-safe counter.
+// Replaces state_v3: Uint<8> (C-3 overflow bug) with Counter (unlimited).
+export ledger last_anchor_hash: Bytes<32>;
+export ledger anchor_count: Counter;
+
+constructor() {
+}
+
+export circuit anchor(fact_hash: Bytes<32>): [] {
+    last_anchor_hash = disclose(fact_hash);
+    anchor_count.increment(1);
+}

@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "file": "index.js",
+  "sourceRoot": "../../../../../",
+  "sources": ["src/circuits/anchor.compact"],
+  "names": [],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;EAUA;;;;;;;;;;MAGA,AAAA,MAGC;;;;;cAHqB,WAAoB;;;;;;;;;;;;;;;;;;yCAApB,WAAoB;;;;;;;mEAApB,WAAoB;;;OAGzC;;;;GALA;EADD;;;;;;;;;;;;;;;;;;;;;;;;;;;IAHA;;;;;;;;;yEAA0C;IAC1C;;;;;;;;;yEAAoC;;;;;;;GAGnC;EAED,AAAA,SAGC,4BAHqB,WAAoB;IACtC;;;;;;;2HAA4B,WAAS;;yEAArB;UAChB,KAAY;IAAZ;;;;;;;;;;6FAAA,KAAY;;;;wEAAA;;GACf;;;;;;;;;;;;;;;;IATD;qCAAA;;;;;;;;;;;0GAA0C;KAAA;IAC1C;qCAAA;;;;;;;;;;;0GAAoC;KAAA;;;;;;;;;;"
+}
