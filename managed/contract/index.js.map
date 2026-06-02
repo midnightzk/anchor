@@ -1,8 +1,8 @@
 {
   "version": 3,
   "file": "index.js",
-  "sourceRoot": "../../../../../",
-  "sources": ["src/circuits/anchor.compact"],
+  "sourceRoot": "../../",
+  "sources": ["anchor.compact", "compiler/standard-library.compact"],
   "names": [],
-  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;EAUA;;;;;;;;;;MAGA,AAAA,MAGC;;;;;cAHqB,WAAoB;;;;;;;;;;;;;;;;;;yCAApB,WAAoB;;;;;;;mEAApB,WAAoB;;;OAGzC;;;;GALA;EADD;;;;;;;;;;;;;;;;;;;;;;;;;;;IAHA;;;;;;;;;yEAA0C;IAC1C;;;;;;;;;yEAAoC;;;;;;;GAGnC;EAED,AAAA,SAGC,4BAHqB,WAAoB;IACtC;;;;;;;2HAA4B,WAAS;;yEAArB;UAChB,KAAY;IAAZ;;;;;;;;;;6FAAA,KAAY;;;;wEAAA;;GACf;;;;;;;;;;;;;;;;IATD;qCAAA;;;;;;;;;;;0GAA0C;KAAA;IAC1C;qCAAA;;;;;;;;;;;0GAAoC;KAAA;;;;;;;;;;"
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;EA0BA;;;;;;;;;;;;;MAJA,AAAA,SAEC;;OAAA;MAMD,AAAA,MAIC;;;;;cAJqB,WAAoB;;;;;;;;;;;;;;;;;;yCAApB,WAAoB;;;;;;;mEAApB,WAAoB;;;OAIzC;MAED,AAAA,WAGC;;;;;cAH0B,UAAmB;;;;;;;;;;;;;;;;;;yCAAnB,UAAmB;;;;;;;;;6CAAnB,UAAmB;;;OAG7C;;;;;;;;;;GAXA;EAFD;;;;;UAAY,cAAuB;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAVnC;;;;;;;;;yEAA0C;IAC1C;;;;;;;;;yEAAoC;IACpC;;;;;;;;;yEAA+B;IAS3B;;;;;;;2HAAiB,cAAY;;yEAAxB;;;;;;;GACR;EC5BD,AAAA,kBAAA;oEAAA;;;EDoBA,AAAA,iBAAoC;;0DAApC,cAAoC;;;;;;;;;;;;;;GAAA;EAEpC,AAAA,YAEC,CAF6B,IAAa;;mCACwC,IAAE;GACpF;EAMD,AAAA,SAIC,4BAJqB,WAAoB;;;kEACS;;;;;;;;;;;uIAAK;;IACpD;;;;;;;2HAA4B,WAAS;;yEAArB;UAChB,KAAY;IAAZ;;;;;;;;;;6FAAA,KAAY;;;;wEAAA;;GACf;EAED,AAAA,cAGC,4BAH0B,UAAmB;;;kEACK;;;;;;;;;;;uIAAK;;IACpD;;;;;;;2HAAiB,UAAQ;;yEAApB;;GACR;;;;;;;;;;;;;;;;;;;;;;;;IAvBD;qCAAA;;;;;;;;;;;0GAA0C;KAAA;IAC1C;qCAAA;;;;;;;;;;;0GAAoC;KAAA;IACpC;qCAAA;;;;;;;;;;;0GAA+B;KAAA;;;;;;;;EAI/B,AAAA,SAEC;;;;UAF6B,IAAa;;;;;;;;uCAAb,IAAa;GAE1C;;;;"
 }

@@ -2,16 +2,39 @@ pragma language_version >= 0.20;
 
 import CompactStandardLibrary;
 
-// Phase 1 (Atom-1A): anchor now accepts fact_hash: Bytes<32>
-// Stores the latest fact hash on-chain and increments an overflow-safe counter.
-// Replaces state_v3: Uint<8> (C-3 overflow bug) with Counter (unlimited).
+// midnightzk-anchor V2 — owner-gated in-circuit authentication.
+//
+// On-chain state is bounded-by-design: a single 32-byte commitment slot, a
+// fixed-size counter, and a single 32-byte owner public key. There is no
+// map, vector, or other growable container, so state-space remains constant
+// regardless of call rate.
+//
+// Every state-mutating circuit (anchor, rotateOwner) gates on a single
+// rotatable owner key before any write. The owner public key is derived from a
+// secret key (supplied off-chain via the localSecretKey witness) through the
+// publicKey pure circuit, so deploy-time and call-time derivations are
+// byte-identical by construction.
 export ledger last_anchor_hash: Bytes<32>;
 export ledger anchor_count: Counter;
+export ledger owner: Bytes<32>;
 
-constructor() {
+witness localSecretKey(): Bytes<32>;
+
+export pure circuit publicKey(sk: Bytes<32>): Bytes<32> {
+    return persistentHash<Vector<2, Bytes<32>>>([pad(32, "midnightzk-anchor:pk:"), sk]);
+}
+
+constructor(initialOwner: Bytes<32>) {
+    owner = disclose(initialOwner);
 }
 
 export circuit anchor(fact_hash: Bytes<32>): [] {
+    assert(disclose(publicKey(localSecretKey()) == owner), "unauthorized");
     last_anchor_hash = disclose(fact_hash);
     anchor_count.increment(1);
+}
+
+export circuit rotateOwner(newOwner: Bytes<32>): [] {
+    assert(disclose(publicKey(localSecretKey()) == owner), "unauthorized");
+    owner = disclose(newOwner);
 }

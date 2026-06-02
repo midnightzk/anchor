@@ -4,6 +4,24 @@
   "runtime-version": "0.16.0",
   "circuits": [
     {
+      "name": "publicKey",
+      "pure": true,
+      "proof": false,
+      "arguments": [
+        {
+          "name": "sk",
+          "type": {
+            "type-name": "Bytes",
+            "length": 32
+          }
+        }
+      ],
+      "result-type": {
+        "type-name": "Bytes",
+        "length": 32
+      }
+    },
+    {
       "name": "anchor",
       "pure": false,
       "proof": true,
@@ -21,9 +39,37 @@
         "types": [
         ]
       }
+    },
+    {
+      "name": "rotateOwner",
+      "pure": false,
+      "proof": true,
+      "arguments": [
+        {
+          "name": "newOwner",
+          "type": {
+            "type-name": "Bytes",
+            "length": 32
+          }
+        }
+      ],
+      "result-type": {
+        "type-name": "Tuple",
+        "types": [
+        ]
+      }
     }
   ],
   "witnesses": [
+    {
+      "name": "localSecretKey",
+      "arguments": [
+      ],
+      "result type": {
+        "type-name": "Bytes",
+        "length": 32
+      }
+    }
   ],
   "contracts": [
   ],
@@ -43,6 +89,16 @@
       "index": 1,
       "exported": true,
       "storage": "Counter"
+    },
+    {
+      "name": "owner",
+      "index": 2,
+      "exported": true,
+      "storage": "Cell",
+      "type": {
+        "type-name": "Bytes",
+        "length": 32
+      }
     }
   ]
 }
